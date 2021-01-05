@@ -20,5 +20,6 @@
     <Folder Include="Views\" />
     <Folder Include="Mocks\" />
     <Folder Include="BusinessLayout\" />
+    <Folder Include="Views\Converters\" />
   </ItemGroup>
 </Project>
