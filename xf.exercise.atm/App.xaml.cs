@@ -1,6 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+using xf.exercise.atm.Views;
 
 namespace xf.exercise.atm
 {
@@ -9,8 +8,7 @@ namespace xf.exercise.atm
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new DashPage());
         }
 
         protected override void OnStart()

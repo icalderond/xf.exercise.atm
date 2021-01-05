@@ -19,5 +19,6 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
     <Folder Include="Mocks\" />
+    <Folder Include="BusinessLayout\" />
   </ItemGroup>
 </Project>
