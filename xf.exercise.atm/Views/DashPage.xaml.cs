@@ -8,6 +8,7 @@ namespace xf.exercise.atm.Views
         public DashPage()
         {
             InitializeComponent();
+            this.BindingContext = new DashViewModel();
         }
     }
 }
