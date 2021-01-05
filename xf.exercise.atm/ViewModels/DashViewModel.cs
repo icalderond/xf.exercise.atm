@@ -32,11 +32,11 @@ namespace xf.exercise.atm.ViewModels
         #endregion Properties
 
         #region Commands
-        private ActionCommand<int> _GetDollarBillCommand;
-        public ActionCommand<int> GetDollarBillCommand
+        private ActionCommand<string> _GetDollarBillCommand;
+        public ActionCommand<string> GetDollarBillCommand
         {
             get => _GetDollarBillCommand = _GetDollarBillCommand
-                ?? new ActionCommand<int>((dollarBill) => GetDollarBill(dollarBill));
+                ?? new ActionCommand<string>((dollarBill) => GetDollarBill(dollarBill));
         }
 
         private ActionCommand _ResetDollarBillCommand;
@@ -53,10 +53,13 @@ namespace xf.exercise.atm.ViewModels
             DollarsBillStorage = new ObservableCollection<DollarsBill>(DollarsBillMock.GetDollarsBills());
         }
 
-        private async void GetDollarBill(int dollarBill)
+        private async void GetDollarBill(string _dollarBill)
         {
             try
             {
+                if (!int.TryParse(_dollarBill, out int dollarBill))
+                    throw new Exception("Solo se permiten números enteros");
+
                 var GetBills = DashBL.GetDollarBill(dollarBill, DollarsBillStorage);
                 DollarsBillStorage.ForEach((bill) =>
                 {
